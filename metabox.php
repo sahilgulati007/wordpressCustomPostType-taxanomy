@@ -17,7 +17,7 @@ function sg_meta_box_cb($object)
 }
 //saving it to database
 add_action( 'save_post', 'sg_meta_box_save' );
-function cd_meta_box_save( $post_id )
+function sg_meta_box_save( $post_id )
 {
     // Bail if we're doing an auto save
     if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
