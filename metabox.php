@@ -2,13 +2,13 @@
  * Custom meta boxes
  */
 //adding meta boxes
-add_action( 'add_meta_boxes', 'cd_meta_box_add' );
-function cd_meta_box_add()
+add_action( 'add_meta_boxes', 'sg_meta_box_add' );
+function sg_meta_box_add()
 {
-    add_meta_box( 'my-meta-box-id', 'My First Meta Box', 'cd_meta_box_cb', array('post','movies'), 'normal', 'high' );
+    add_meta_box( 'my-meta-box-id', 'My First Meta Box', 'sg_meta_box_cb', array('post','movies'), 'normal', 'high' );
 }
 //
-function cd_meta_box_cb($object)
+function sg_meta_box_cb($object)
 {
     ?>
     <label for="meta-box-text">Text Label</label>
@@ -16,7 +16,7 @@ function cd_meta_box_cb($object)
     <?php
 }
 //saving it to database
-add_action( 'save_post', 'cd_meta_box_save' );
+add_action( 'save_post', 'sg_meta_box_save' );
 function cd_meta_box_save( $post_id )
 {
     // Bail if we're doing an auto save
